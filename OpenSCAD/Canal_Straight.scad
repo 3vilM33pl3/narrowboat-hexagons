@@ -8,15 +8,15 @@ function reverse(v) = [for (i=[len(v)-1:-1:0]) v[i]];
 function delete_first(v) = [for (i=[1:len(v)-1]) v[i]]; 
 
 // cubic bezier curve for canal shape 
-p10 = [-75, 63];
-p11 = [-30, 63];
-p12 = [-60, 18];
-p13 = [0, 18];
+p10 = [-7.5, 6.3];
+p11 = [-3.0, 6.3];
+p12 = [-6.0, 1.8];
+p13 = [0.0, 1.8];
 
-p20 = [75, 63];
-p21 = [30, 63];
-p22 = [60, 18];
-p23 = [0, 18];
+p20 = [7.5, 6.3];
+p21 = [3.0, 6.3];
+p22 = [6.0, 1.8];
+p23 = [0.0, 1.8];
 
 
 // bezier curve
@@ -29,15 +29,15 @@ difference()
     color("Peru", 1.0)
     {
         // hexagon base
-        linear_extrude(height = 62, center = false, convexity = 10, twist = 0)
-        circle(300, $fn=6);
+        linear_extrude(height = 6.2, center = false, convexity = 10, twist = 0)
+        circle(30, $fn=6);
     }
     
     color("DodgerBlue", 1.0)
     {
         // canal shape
         rotate([90,0,0])
-        linear_extrude(height = 1200, center = true, convexity = 10, twist = 0)
+        linear_extrude(height = 120, center = true, convexity = 10, twist = 0)
         polygon(points);
     }
     
